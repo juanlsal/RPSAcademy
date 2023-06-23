@@ -1,0 +1,55 @@
+﻿@model MultipleChoice
+
+
+
+<h1 class="Title1">Create a New Question</h1>
+<p class="Subtext1">
+    Update the fields and click the "Create Question" button to add your question
+</p>
+
+
+@using (Html.BeginForm("InsertQuestionToDatabase", "MultipleChoice", "Post"))
+{
+    <input asp-for="QuestionNumber" type="hidden" value="@Model.QuestionNumber" />
+
+    <label asp-for="Question" class="label-text">Question:</label>
+    <input type="text" name="Question" class="form-control" value="@Model.Question" />
+
+    <label asp-for="AnswerA" class="label-text">Answer A:</label>
+    <input type="text" name="AnswerA" class="form-control" value="@Model.AnswerA" />
+
+    <label asp-for="AnswerB" class="label-text">Answer B:</label>
+    <input type="text" name="AnswerB" class="form-control" value="@Model.AnswerB" />
+
+    <label asp-for="AnswerC" class="label-text">Answer C:</label>
+    <input type="text" name="AnswerC" class="form-control" value="@Model.AnswerC" />
+
+    <label asp-for="AnswerD" class="label-text">Answer D:</label>
+    <input type="text" name="AnswerD" class="form-control" value="@Model.AnswerD" />
+
+    <div class="form-group">
+        <label class="label-text" for="">Select The Correct answer</label>
+        <select class="form-control" name="CorrectAnswerID" value "@Model.CorrectAnswerID">
+            <option value=1>A</option>
+            <option value=2>B</option>
+            <option value=3>C</option>
+            <option value=4>D</option>
+        </select>
+    </div>
+
+    <label asp-for="CorrectAnswerString" class="label-text">Correct Answer String:</label>
+    <input type="text" name="CorrectAnswerString" class="form-control" value="@Model.CorrectAnswerString" />
+
+    <div class="form-group">
+        <label class="label-text" for="">Select a Subject</label>
+        <select class="form-control" name="SubjectID" value "@Model.SubjectID">
+            <option value=1>Git</option>
+            <option value=2>SQL</option>
+            <option value=3>C#</option>
+            <option value=4>blank</option>
+            <option value=5>red thing</option>
+        </select>
+    </div> 
+    <p></p>
+    <input type="submit" value="Create Question" class="Primary-Button" />
+}

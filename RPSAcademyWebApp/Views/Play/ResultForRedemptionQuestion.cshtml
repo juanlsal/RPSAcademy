@@ -1,0 +1,183 @@
+﻿@model Game
+
+<!--still playing-->
+@if (Model.UserScore < Model.WinPoint && Model.OppScore < Model.WinPoint)
+{
+    <div class="row-rps-winpoint">
+        <p class="winpoint-text">First To @Model.WinPoint Points Wins The Game!</p>
+    </div>
+
+    <div class="row-rps-scoreboard">
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.UserName Score: @Model.UserScore</p>
+        </div>
+        <div>
+            <img src="@Model.OppImage" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.OppName Score: @Model.OppScore</p>
+        </div>
+    </div>
+
+    <!--user answers correctly-->
+    @if (ViewBag.Path == 1)
+    {
+        <div class="row-rps-instruction2">
+            <p class="instruction-text-title">Congrats @Model.UserName! You won a point!</p>
+            <p class="instruction-text-subtext">Keep playing more rounds</p>
+            @using (Html.BeginForm("RoundOfRPS", "Play", FormMethod.Post))
+            {
+                <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+                <input type="hidden" name="oppID" value="@Model.OppID" />
+                <input type="hidden" name="userName" value="@Model.UserName" />
+                <input type="hidden" name="userScore" value="@Model.UserScore" />
+                <input type="hidden" name="oppName" value="@Model.OppName" />
+                <input type="hidden" name="oppScore" value="@Model.OppScore" />
+                <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+                <button type="submit" class="Primary-Button">Continue</button>
+            }
+        </div>
+
+        <div class="question-prompt2">
+            <p class="question"><strong>Question:</strong> @ViewBag.Question</p>
+            <p class="question"><strong>Correct Answer:</strong> @ViewBag.CorrectAnswerString</p>
+        </div>
+    }
+
+
+    <!--user answers incorrectly-->
+    @if (ViewBag.Path == 2)
+    {
+        <div class="row-rps-instruction2">
+            <p class="instruction-text-title">Oh no... That was incorrect.</p>
+            <p class="instruction-text-subtext">Keep playing more rounds</p>
+            @using (Html.BeginForm("RoundOfRPS", "Play", FormMethod.Post))
+            {
+                <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+                <input type="hidden" name="oppID" value="@Model.OppID" />
+                <input type="hidden" name="userName" value="@Model.UserName" />
+                <input type="hidden" name="userScore" value="@Model.UserScore" />
+                <input type="hidden" name="oppName" value="@Model.OppName" />
+                <input type="hidden" name="oppScore" value="@Model.OppScore" />
+                <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+                <button type="submit" class="Primary-Button">Continue</button>
+            }
+        </div>
+
+        <div class="question-prompt2">
+            <p class="question"><strong>Question:</strong> @ViewBag.Question</p>
+            <p class="question"><strong>Correct Answer:</strong> @ViewBag.CorrectAnswerString</p>
+        </div>
+    }
+
+
+    <!--opponent answers correctly-->
+    @if (ViewBag.Path2 == 1)
+    {
+        <div class="row-rps-instruction2">
+            <p class="instruction-text-title">@Model.OppName answered correctly! They won a point!</p>
+            <p class="instruction-text-subtext">Keep playing more rounds</p>
+            @using (Html.BeginForm("RoundOfRPS", "Play", FormMethod.Post))
+            {
+                <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+                <input type="hidden" name="oppID" value="@Model.OppID" />
+                <input type="hidden" name="userName" value="@Model.UserName" />
+                <input type="hidden" name="userScore" value="@Model.UserScore" />
+                <input type="hidden" name="oppName" value="@Model.OppName" />
+                <input type="hidden" name="oppScore" value="@Model.OppScore" />
+                <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+                <button type="submit" class="Primary-Button">Continue</button>
+            }
+        </div>
+
+        <div class="question-prompt2">
+            <p class="question"><strong>Question:</strong> @ViewBag.Question</p>
+            <p class="question"><strong>Correct Answer:</strong> @ViewBag.CorrectAnswerString</p>
+        </div>
+    }
+
+
+    <!--opponent answers correctly-->
+    @if (ViewBag.Path2 == 2)
+    {
+        <div class="row-rps-instruction2">
+            <p class="instruction-text-title">@Model.OppName answered incorrectly!</p>
+            <p class="instruction-text-subtext">Keep playing more rounds</p>
+            @using (Html.BeginForm("RoundOfRPS", "Play", FormMethod.Post))
+            {
+                <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+                <input type="hidden" name="oppID" value="@Model.OppID" />
+                <input type="hidden" name="userName" value="@Model.UserName" />
+                <input type="hidden" name="userScore" value="@Model.UserScore" />
+                <input type="hidden" name="oppName" value="@Model.OppName" />
+                <input type="hidden" name="oppScore" value="@Model.OppScore" />
+                <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+                <button type="submit" class="Primary-Button">Continue</button>
+            }
+        </div>
+
+        <div class="question-prompt2">
+            <p class="question"><strong>Question:</strong> @ViewBag.Question</p>
+            <p class="question"><strong>Correct Answer:</strong> @ViewBag.CorrectAnswerString</p>
+        </div>
+    }
+}
+
+<!--user wins game-->
+@if (Model.UserScore == Model.WinPoint)
+{
+    <div class="row-rps-winpoint">
+        <p class="winpoint-text">First To @Model.WinPoint Points Wins The Game!</p>
+    </div>
+
+    <div class="row-rps-scoreboard">
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.UserName Score: @Model.UserScore</p>
+        </div>
+        <div>
+            <img src="@Model.OppImage" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.OppName Score: @Model.OppScore</p>
+        </div>
+    </div>
+
+    <div class="row-rps-instruction2">
+        <p class="instruction-text-title">Congratulations @Model.UserName you won the game</p>
+        <p class="instruction-text-subtext">You defeated @Model.OppName.</p>
+        @using (Html.BeginForm("ChooseOpp", "Play", FormMethod.Post))
+        {
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <button type="submit" class="Primary-Button">Play Again</button>
+        }
+    </div>
+}
+
+<!--opponent wins game-->
+@if (Model.OppScore == Model.WinPoint)
+{
+    <div class="row-rps-winpoint">
+        <p class="winpoint-text">First To @Model.WinPoint Points Wins The Game!</p>
+    </div>
+
+    <div class="row-rps-scoreboard">
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.UserName Score: @Model.UserScore</p>
+        </div>
+        <div>
+            <img src="@Model.OppImage" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.OppName Score: @Model.OppScore</p>
+        </div>
+    </div>
+
+    <div class="row-rps-instruction2">
+        <p class="instruction-text-title">You Lost. @Model.UserName won the game</p>
+        <p class="instruction-text-subtext">You  were defeated. </p>
+        @using (Html.BeginForm("ChooseOpp", "Play", FormMethod.Post))
+        {
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <button type="submit" class="Primary-Button">Play Again</button>
+        }
+    </div>
+}

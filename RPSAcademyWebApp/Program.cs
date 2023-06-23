@@ -1,3 +1,7 @@
+using MySql.Data.MySqlClient;
+using RPSAcademyWebApp;
+using System.Data;
+
 namespace RPSAcademyWebApp
 {
     public class Program
@@ -8,6 +12,17 @@ namespace RPSAcademyWebApp
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddScoped<IDbConnection>((s) =>
+            {
+                IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("rpsacademy"));
+                conn.Open();
+                return conn;
+            });
+
+            builder.Services.AddTransient<IMultipleChoiceRepository, MultipleChoiceRepository>();
+
+            builder.Services.AddTransient<IGameRepository, GameRepository>(); //needed for adding repo to controller!!
 
             var app = builder.Build();
 

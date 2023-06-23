@@ -1,18 +1,485 @@
-html {
-  font-size: 14px;
+/*Header*/
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.navbar {
+    background-color: black;
+    border-bottom: 1px solid #ddd;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.navbar-brand {
+    color: lightgray;
+    font-weight: 400;
+    font-size: 20px;
 }
 
+
+.nav-link {
+    color: lightgray;
+    font-size: 20px;
+}
+/*-----------------------------------------------------------------------------------------*/
+/*Body Shared*/
 body {
-  margin-bottom: 60px;
+    background-color: antiquewhite;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.Primary-Button {
+    text-align: center;
+    margin-bottom: 10px;
+    height: 30px;
+    background-color: black;
+    width: 200px;
+    color: white;
+    position: center;
+    font-weight: 500;
+}
+
+
+.Primary-Button2 {
+    text-align: center;
+    margin-bottom: 10px;
+    height: 30px;
+    background-color: black;
+    width: 200px;
+    color: white;
+    position: center;
+    font-weight: 500;
+    transform: translateX(2.5%);
+}
+
+.container {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 50px;
+    overflow: auto;
+}
+
+tr {
+    border-bottom: 1.5px solid black;
+}
+
+td {
+    border-right: 1px solid black;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+}
+
+.label-text {
+    font-weight: 500;
+}
+
+.Title1 {
+    margin-top: 20px;
+    color: black;
+    font-size: 30px;
+    font-weight: 400;
+    flex: 1;
+}
+
+.Subtext1 {
+    font-size: 18px;
+    color: black;
+    font-weight: 400;
+}
+/*---------------------------------------------*/
+/*Home/Index*/
+.Title-Home {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+.instructions {
+    font-size: 16px;
+    background-color: transparent;
+    padding-bottom: 30px;
+    border: 5px solid black;
+}
+
+.instruction-title {
+    font-size: 20px;
+    background-color: black;
+    font-weight: 400;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid #ddd;
+    color: white;
+}
+
+.instruction-container {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 400;
+}
+/*---------------------------------------------*/
+/*MultipleChoice/Index*/
+.Table-AllQuestions {
+    width: 100%;
+    background-color: #BDB6AC;
+    color: black;
+    font-weight: 600;
+    flex: 1;
+    margin-left: 0;
+    margin-right: 0;
+    border-color: black;
+    border: 3px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.Table-Info {
+    color: black;
+    border-right: 1px solid black;
+    background-color: #a39d96;
+    position: sticky;
+    top: 54px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+/*---------------------------------------------*/
+/*MultipleChoice/ViewQuestion*/
+.Table-ViewQuestion {
+    width: 100%;
+    background-color: #BDB6AC;
+    color: black;
+    font-weight: 600;
+    flex: 1;
+    margin-left: 0;
+    margin-right: 0;
+    border-color: black;
+    border: 3px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.Table-ViewQuestion-Info {
+    color: black;
+    border-right: 1px solid black;
+    background-color: #a39d96;
+    position: sticky;
+    top: 54px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.Table-ViewQuestion-Rows {
+    height: 100px;
+}
+/*---------------------------------------------*/
+/*Play/ChooseOpp*/
+.row {
+    position: center;
+    margin-left: 30px;
+}
+
+.col-md-4 {
+    width: 250px;
+}
+
+.opp-image {
+    border: 3px solid black;
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+    margin-right: 60px;
+    margin-bottom: 5px;
+    transform: translateX(10%);
+}
+
+.hover-button {
+    margin-left: 40px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+    background-color: white;
+    font-weight: 500;
+    font-size: 15px;
+    transform: translateX(5%);
+}
+
+    .hover-button::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: 115%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 5px;
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+        font-size: 14px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    .hover-button:hover::before {
+        opacity: 1;
+    }
+/*---------------------------------------------*/
+/*Play/SetWinPoint*/
+.opp-image-SetWinPoint {
+    border: 3px solid black;
+    height: 200px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+/*---------------------------------------------*/
+/*Play RPS Shared*/
+.row-rps-winpoint {
+    position: fixed;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    top: 60px;
+    width: 900px;
+}
+
+.winpoint-text {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.row-rps-scoreboard {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .row-rps-scoreboard div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 360px;
+        width: 300px;
+    }
+
+.rps-player-image {
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.rps-score {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.row-rps-instruction {
+    position: fixed;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    justify-content: center;
+    bottom: 90px;
+    width: 900px;
+}
+
+.instruction-text-title {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.instruction-text-subtext {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: -15px;
+}
+
+.instruction-text-subtext2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: -10px;
+    width: 230px;
+    text-align: center;
+}
+
+/*---------------------------------------------*/
+/*Play/RoundOfRPS */
+.row-rps-selection {
+    position: fixed;
+    width: 1000px;
+    bottom: 188px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-button {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 0 50px;
+}
+
+.rock-button {
+    background-image: url("https://thumbs.dreamstime.com/b/rock-paper-scissors-white-icon-gradient-orange-background-134933371.jpg");
+}
+
+.paper-button {
+    background-image: url("https://thumbs.dreamstime.com/b/kids-game-rock-paper-scissors-white-icon-gradient-orange-background-134992592.jpg");
+}
+
+.scissors-button {
+    background-image: url("https://thumbs.dreamstime.com/b/kids-game-rock-paper-scissors-white-icon-gradient-orange-background-134992579.jpg");
+}
+/*---------------------------------------------*/
+/*Play ResultOfRPS*/
+.row-rps-continue {
+    position: fixed;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    justify-content: center;
+    bottom: 230px;
+    width: 900px;
+}
+/*---------------------------------------------*/
+/*Play-RPSQuestion-Shared*/
+.question-prompt {
+    position: fixed;
+    text-align: left;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    border: 5px solid black;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #a39d96;
+}
+
+.turn {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.subject {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.question {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.quiz-form {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.quiz-option {
+    margin-bottom: 10px;
+}
+
+    .quiz-option label {
+        margin-left: 10px;
+        font-weight: 500;
+        transform: translateY(-5px);
+    }
+
+    .quiz-option input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+        .quiz-option input[type="radio"]:checked:before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: black;
+            transform: translateX(-0.5px);
+            margin-right: 5px;
+        }
+
+.row-rps-instruction2 {
+    position: fixed;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    justify-content: center;
+    bottom: 220px;
+    width: 600px;
+}
+
+.question-prompt2 {
+    position: fixed;
+    text-align: left;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    width: 700px;
+    border: 5px solid black;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #a39d96;
+}
+/*-----------------------------------------------------------------------------------------*/
+/*Footer*/
+footer {
+    width: 100%;
+    position: fixed;
+    background-color: black;
+    bottom: 0;
+    height: 40px;
+    padding-top: 10px;
+    color: gray;
+}
+
+.footer-info {
+    text-align: center;
+    color: lightgray;
 }

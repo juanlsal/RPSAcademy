@@ -1,0 +1,185 @@
+﻿@model Game
+
+
+<h1 class="Title1">Welcome back, @Model.UserName, are you ready to play and learn? </h1>
+<p class="Subtext1">Choose your opponent. Each opponent has a unique chance of answering the question correctly, so choose wisely...</p>
+
+<!--Choose opponent rows-->
+<div class="row">
+
+    <!--novice nancy-->
+    <div class="col-md-4">
+        <img src="https://images.chesscomfiles.com/uploads/v1/user/66746066.19a65fbb.200x200o.05bddf716131.png" alt="Image 1" class="opp-image" />
+        @using (Html.BeginForm("SetWinPoint", "Play", FormMethod.Post))
+        {
+            <!--adding to IActionResult parameters-->
+            <input type="hidden" name="oppID" value="0" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="oppName" value="Novice Nancy" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <button type="submit" class="Primary-Button2">Novice Nancy</button>
+        }
+        <!--hoover button to see chance of opp answering question correctly-->
+        <button class="hover-button" data-tooltip="0% chance of answering a question correctly.">Hover For Info!</button>
+    </div>
+
+    <!--beginner ben-->
+    <div class="col-md-4">
+        <img src="https://images.chesscomfiles.com/uploads/v1/user/86372808.f93673f8.200x200o.3fbbc6d3beb4.png" alt="Image 1" class="opp-image" />
+        @using (Html.BeginForm("SetWinPoint", "Play", FormMethod.Post))
+        {
+            <!--adding to IActionResult parameters-->
+            <input type="hidden" name="oppID" value="1" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="oppName" value="Beginner Ben" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <button type="submit" class="Primary-Button2">Beginner Ben</button>
+        }
+        <!--hoover button to see chance of opp answering question correctly-->
+        <button class="hover-button" data-tooltip="10% chance of answering a question correctly.">Hover For Info!</button>
+    </div>
+
+    <!--junior developer julie-->
+    <div class="col-md-4">
+        <img src="https://images.chesscomfiles.com/uploads/v1/user/66746152.1f1905ee.200x200o.ff1b08a80f9c.png" alt="Image 1" class="opp-image" />
+        @using (Html.BeginForm("SetWinPoint", "Play", FormMethod.Post))
+        {
+            <!--adding to IActionResult parameters-->
+            <input type="hidden" name="oppID" value="2" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="oppName" value="Junior Developer Julie" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <button type="submit" class="Primary-Button2">Junior Developer Julie</button>
+        }
+        <!--hoover button to see chance of opp answering question correctly-->
+        <button class="hover-button" data-tooltip="20% chance of answering a question correctly.">Hover For Info!</button>
+    </div>
+
+    <!--intermediate isaac-->
+    <div class="col-md-4">
+        <img src="https://images.chesscomfiles.com/uploads/v1/user/66746112.62754ebd.200x200o.ed2f2f2e6cae.png" alt="Image 1" class="opp-image" />
+        @using (Html.BeginForm("SetWinPoint", "Play", FormMethod.Post))
+        {
+            <!--adding to IActionResult parameters-->
+            <input type="hidden" name="oppID" value="3" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="oppName" value="Intermediate Isaac" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <button type="submit" class="Primary-Button2">Intermediate Isaac</button>
+        }
+        <!--hoover button to see chance of opp answering question correctly-->
+        <button class="hover-button" data-tooltip="30% chance of answering a question correctly.">Hover For Info!</button>
+    </div>
+
+    <!--advanced amelia-->
+    <div class="col-md-4">
+        <img src="https://images.chesscomfiles.com/uploads/v1/user/66745990.8caa7131.200x200o.ee3f384b460f.png" alt="Image 1" class="opp-image" />
+        @using (Html.BeginForm("SetWinPoint", "Play", FormMethod.Post))
+        {
+            <!--adding to IActionResult parameters-->
+            <input type="hidden" name="oppID" value="4" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="oppName" value="Advanced Amelia" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <button type="submit" class="Primary-Button2">Advanced Amelia</button>
+        }
+        <!--hoover button to see chance of opp answering question correctly-->
+        <button class="hover-button" data-tooltip="40% chance of answering a question correctly.">Hover For Info!</button>
+    </div>
+
+    <!--senior developer sam-->
+    <div class="col-md-4">
+        <img src="https://images.chesscomfiles.com/uploads/v1/user/66746068.6b0443e7.200x200o.431299f833ac.png" alt="Image 1" class="opp-image" />
+        @using (Html.BeginForm("SetWinPoint", "Play", FormMethod.Post))
+        {
+            <!--adding to IActionResult parameters-->
+            <input type="hidden" name="oppID" value="5" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="oppName" value="Senior Developer Sam" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <button type="submit" class="Primary-Button2">Senior Developer Sam</button>
+        }
+        <!--hoover button to see chance of opp answering question correctly-->
+        <button class="hover-button" data-tooltip="50% chance of answering a question correctly.">Hover For Info!</button>
+    </div>
+
+    <!--expert ethan-->
+    <div class="col-md-4">
+        <img src="https://images.chesscomfiles.com/uploads/v1/user/66746100.bdace8c3.200x200o.315e695aec56.png" alt="Image 1" class="opp-image" />
+        @using (Html.BeginForm("SetWinPoint", "Play", FormMethod.Post))
+        {
+            <!--adding to IActionResult parameters-->
+            <input type="hidden" name="oppID" value="6" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="oppName" value="Expert Ethan" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <button type="submit" class="Primary-Button2">Expert Ethan</button>
+        }
+        <!--hoover button to see chance of opp answering question correctly-->
+        <button class="hover-button" data-tooltip="60% chance of answering a question correctly.">Hover For Info!</button>
+    </div>
+
+    <!--masterful morgan-->
+    <div class="col-md-4">
+        <img src="https://images.chesscomfiles.com/uploads/v1/user/66745978.64d840c2.200x200o.fc49daaa55f1.png" alt="Image 1" class="opp-image" />
+        @using (Html.BeginForm("SetWinPoint", "Play", FormMethod.Post))
+        {
+            <!--adding to IActionResult parameters-->
+            <input type="hidden" name="oppID" value="7" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="oppName" value="Masterful Morgan" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <button type="submit" class="Primary-Button2">Masterful Morgan</button>
+        }
+        <!--hoover button to see chance of opp answering question correctly-->
+        <button class="hover-button" data-tooltip="70% chance of answering a question correctly.">Hover For Info!</button>
+    </div>
+
+    <!--guru giselle-->
+    <div class="col-md-4">
+        <img src="https://images.chesscomfiles.com/uploads/v1/user/66746128.b0c866b0.200x200o.ea4f52c7cf90.png" alt="Image 1" class="opp-image" />
+        @using (Html.BeginForm("SetWinPoint", "Play", FormMethod.Post))
+        {
+            <!--adding to IActionResult parameters-->
+            <input type="hidden" name="oppID" value="8" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="oppName" value="Guru Giselle" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <button type="submit" class="Primary-Button2">Guru Giselle</button>
+        }
+        <!--hoover button to see chance of opp answering question correctly-->
+        <button class="hover-button" data-tooltip="80% chance of answering a question correctly.">Hover For Info!</button>
+    </div>
+
+    <!--visonary victor-->
+    <div class="col-md-4">
+        <img src="https://images.chesscomfiles.com/uploads/v1/user/66745948.f2132f62.200x200o.086d7249e99f.png" alt="Image 1" class="opp-image" />
+        @using (Html.BeginForm("SetWinPoint", "Play", FormMethod.Post))
+        {
+            <!--adding to IActionResult parameters-->
+            <input type="hidden" name="oppID" value="9" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="oppName" value="Visionary Victor" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <button type="submit" class="Primary-Button2">Visionary Victor</button>
+        }
+        <!--hoover button to see chance of opp answering question correctly-->
+        <button class="hover-button" data-tooltip="90% chance of answering a question correctly.">Hover For Info!</button>
+    </div>
+
+    <!--legenedary lila-->
+    <div class="col-md-4">
+        <img src="https://images.chesscomfiles.com/uploads/v1/user/66746134.3681aa8d.200x200o.0fbf4b25d3d8.png" alt="Image 1" class="opp-image" />
+        @using (Html.BeginForm("SetWinPoint", "Play", FormMethod.Post))
+        {
+            <!--adding to IActionResult parameters-->
+            <input type="hidden" name="oppID" value="10" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="oppName" value="Legendary Lila" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <button type="submit" class="Primary-Button2">Legendary Lila</button>
+        }
+        <!--hoover button to see chance of opp answering question correctly-->
+        <button class="hover-button" data-tooltip="100% chance of answering a question correctly.">Hover For Info!</button>
+    </div>
+</div>

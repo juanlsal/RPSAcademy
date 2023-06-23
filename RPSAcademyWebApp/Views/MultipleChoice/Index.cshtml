@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MultipleChoice>
+
+<h1 class="Title1">Questions</h1>
+<p class="Subtext1">Feel free to browse, create, update, or delete any of the questions available!</p>
+
+<div style="display: block">
+    <a href="/MultipleChoice/InsertQuestion/">Create a New Question</a>
+</div>
+
+<table class="Table-AllQuestions">
+    <tr class="Table-Info">
+        <th class="Table-Number">Number</th>
+        <th>Question</th>
+        <th>Answer A</th>
+        <th>Answer B</th>
+        <th>Answer C</th>
+        <th>Answer D</th>
+        <th>Correct Answer</th>
+        <th>Correct Answer String</th>
+        <th>Subject</th>
+    </tr>
+
+    @foreach (var question in @Model)
+    {
+        <tr>
+            <td><a href=/MultipleChoice/ViewQuestion/@question.QuestionNumber>@question.QuestionNumber</a></td>
+            <td>@question.Question</td>
+            <td>@question.AnswerA</td>
+            <td>@question.AnswerB</td>
+            <td>@question.AnswerC</td>
+            <td>@question.AnswerD</td>
+            <td>@question.CorrectAnswer</td>
+            <td>@question.CorrectAnswerString</td>
+            <td>@question.Subject</td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,42 @@
+﻿@model MultipleChoice
+
+<h1 class="Title1">Question Details</h1>
+<p class="Subtext1">Here is all the information about the selected question. If you want to update the question, click the "Update This Question" link!</p>
+
+<table class="Table-ViewQuestion">
+    <tr class="Table-ViewQuestion-Info">
+        <th>Number</th>
+        <th>Question</th>
+        <th>Answer A</th>
+        <th>Answer B</th>
+        <th>Answer C</th>
+        <th>Answer D</th>
+        <th>Correct Answer</th>
+        <th>Correct Answer String</th>
+        <th>Subject</th>
+    </tr>
+
+    <tr class="Table-ViewQuestion-Rows">
+        <td>@Model.QuestionNumber</td>
+        <td>@Model.Question</td>
+        <td>@Model.AnswerA</td>
+        <td>@Model.AnswerB</td>
+        <td>@Model.AnswerC</td>
+        <td>@Model.AnswerD</td>
+        <td>@Model.CorrectAnswer</td>
+        <td>@Model.CorrectAnswerString</td>
+        <td>@Model.Subject</td>
+    </tr>
+</table>
+
+<div style="display: block">
+    <a href="/MultipleChoice/UpdateQuestion/@Model.QuestionNumber">Update this Question</a>
+</div>
+<p></p>
+<div style="display: block">
+    @using (Html.BeginForm("DeleteQuestion", "MultipleChoice", "Post"))
+    {
+        <input type="hidden" asp-for="QuestionNumber" values="@Model.QuestionNumber" />
+        <input type="submit" class="Primary-Button" value="Delete this product" />
+    }
+</div>

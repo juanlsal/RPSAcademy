@@ -1,0 +1,122 @@
+﻿@model MultipleChoice
+
+<div class="row-rps-winpoint">
+    <p class="winpoint-text">First To @ViewBag.WinPoint Points Wins The Game!</p>
+</div>
+
+<div class="row-rps-scoreboard">
+    <div>
+        <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="rps-player-image" />
+        <p class="rps-score">@ViewBag.UserName Score: @ViewBag.UserScore</p>
+    </div>
+    <div>
+        <img src="@ViewBag.OppImage" alt="Image 1" class="rps-player-image" />
+        <p class="rps-score">@ViewBag.OppName Score: @ViewBag.OppScore</p>
+    </div>
+</div>
+
+
+<!--user won round-->
+@if(ViewBag.Path == 1)
+{
+    <div class="question-prompt">
+        <p class="turn">@ViewBag.UserName's Turn!</p>
+        <p class="subject"><strong>Subject:</strong> @Model.Subject</p>
+        <p class="question"><strong>Question:</strong> @Model.Question</p>
+        @using (Html.BeginForm("ResultOfQuestionForRPS", "Play", FormMethod.Post))
+        {
+            <input type="hidden" name="oppID" value="@ViewBag.OppID" />
+            <input type="hidden" name="winPoint" value="@ViewBag.WinPoint" />
+            <input type="hidden" name="userName" value="@ViewBag.UserName" />
+            <input type="hidden" name="oppName" value="@ViewBag.OppName" />
+            <input type="hidden" name="oppScore" value="@ViewBag.OppScore" />
+            <input type="hidden" name="userScore" value="@ViewBag.UserScore" />
+            <input type="hidden" name="totalQuestionNumber" value="@ViewBag.TotalQuestionNumber" />
+            <input type="hidden" name="subject" value="@Model.Subject" />
+            <input type="hidden" name="question" value="@Model.Question" />
+            <input type="hidden" name="answerA" value="@Model.AnswerA" />
+            <input type="hidden" name="answerB" value="@Model.AnswerB" />
+            <input type="hidden" name="answerC" value="@Model.AnswerC" />
+            <input type="hidden" name="answerD" value="@Model.AnswerD" />
+            <input type="hidden" name="correctAnswer" value="@Model.CorrectAnswer" />
+            <input type="hidden" name="correctAnswerString" value="@Model.CorrectAnswerString" />
+
+
+            <input type="hidden" name="path" value="1" />
+
+            <div class="quiz-option"> 
+                <input type="radio" id="option-a" name="answer" value="a" />
+                <label for="option-a"><strong>A)</strong> @Model.AnswerA</label>
+            </div>
+
+            <p></p>
+
+            <div class="quiz-option">
+                <input type="radio" id="option-b" name="answer" value="b" />
+                <label for="option-b"><strong>B)</strong> @Model.AnswerB</label>
+            </div>
+
+            <P></P>
+
+            <div class="quiz-option">
+                <input type="radio" id="option-c" name="answer" value="c" />
+                <label for="option-c"><strong>C)</strong> @Model.AnswerC</label>
+            </div>
+
+
+            <p></p>
+
+            <div class="quiz-option">
+                <input type="radio" id="option-d" name="answer" value="d" />
+                <label for="option-d"><strong>D)</strong> @Model.AnswerD</label>
+            </div>
+
+
+            <p></p>
+
+            <button type="submit" class="Primary-Button">Answer</button>
+        }
+    </div>
+}
+
+<!--opponent won round-->
+@if (ViewBag.Path == 2)
+{
+    <div class=centered-double>
+        <div class="question-prompt">
+            <p class="turn">@ViewBag.OppName's Turn</p>
+            <p class="subject"><strong>Subject:</strong> @Model.Subject</p>
+            <p class="question"><strong>Question:</strong> @Model.Question</p>
+            <p><strong>A)</strong> @Model.AnswerA</p>
+            <p></p>
+            <p><strong>B)</strong> @Model.AnswerB</p>
+            <p></p>
+            <p><strong>C)</strong> @Model.AnswerC</p>
+            <p></p>
+            <p><strong>D)</strong> @Model.AnswerD</p>
+            @using (Html.BeginForm("ResultOfQuestionForRPS", "Play", FormMethod.Post))
+            {
+                <input type="hidden" name="oppID" value="@ViewBag.OppID" />
+                <input type="hidden" name="winPoint" value="@ViewBag.WinPoint" />
+                <input type="hidden" name="userName" value="@ViewBag.UserName" />
+                <input type="hidden" name="oppName" value="@ViewBag.OppName" />
+                <input type="hidden" name="userScore" value="@ViewBag.UserScore" />
+                <input type="hidden" name="oppScore" value="@ViewBag.OppScore" />
+                <input type="hidden" name="totalQuestionNumber" value="@ViewBag.TotalQuestionNumber" />
+                <input type="hidden" name="subject" value="@Model.Subject" />
+                <input type="hidden" name="question" value="@Model.Question" />
+                <input type="hidden" name="answerA" value="@Model.AnswerA" />
+                <input type="hidden" name="answerB" value="@Model.AnswerB" />
+                <input type="hidden" name="answerC" value="@Model.AnswerC" />
+                <input type="hidden" name="answerD" value="@Model.AnswerD" />
+                <input type="hidden" name="correctAnswer" value="@Model.CorrectAnswer" />
+                <input type="hidden" name="correctAnswerString" value="@Model.CorrectAnswerString" />
+
+
+                <input type="hidden" name="path" value="2" />
+ 
+                <button type="submit" class="Primary-Button">Reveal Response</button>
+            }
+        </div>
+    </div>
+}

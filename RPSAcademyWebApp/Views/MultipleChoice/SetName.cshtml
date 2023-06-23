@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Set Name";
+}
+@model MultipleChoice
+
+<h1 class="Title1">Let's start learning! But first, I need to know your name!</h1>
+
+@using (Html.BeginForm("ChooseOpp", "Play", FormMethod.Post))
+{
+    <label for="userName" class="label-text">Enter your name:</label>
+    <input type="text" class="form-control" name="userName" />
+    <p></p>
+    <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+    <button type="submit" class="Primary-Button">Submit Name</button>
+
+}

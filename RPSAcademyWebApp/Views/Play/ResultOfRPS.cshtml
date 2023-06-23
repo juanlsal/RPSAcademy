@@ -1,0 +1,151 @@
+﻿@model Game
+
+
+@if (Model.UserScore < Model.WinPoint && Model.OppScore < Model.WinPoint)
+{
+    <div class="row-rps-winpoint">
+        <p class="winpoint-text">First To @Model.WinPoint Points Wins The Game!</p>
+    </div>
+
+    <div class="row-rps-scoreboard">
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.UserName Score: @Model.UserScore</p>
+        </div>
+        <div>
+            <img src="@Model.OppImage" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.OppName Score: @Model.OppScore</p>
+        </div>
+    </div>
+
+    <!--user wins round-->
+    @if (Model.WinnerOfRound == 1)
+    {
+        <div class="row-rps-instruction2">
+            <p class="instruction-text-title">Congratulations! @Model.UserName Won The Round!</p>
+            <p class="instruction-text-subtext">You now have an opportunity to answer a question for an additional point!</p>
+            <p class="instruction-text-subtext">Answer carefully... if you answer incorrectly @Model.OppName will have a chance at answering the question for a point of their own.</p>
+            <p></p>
+            @using (Html.BeginForm("GetQuestionForRPS", "MultipleChoice", FormMethod.Post))
+            {
+                <input type="hidden" name="oppID" value="@Model.OppID" />
+                <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+                <input type="hidden" name="userName" value="@Model.UserName" />
+                <input type="hidden" name="userScore" value="@Model.UserScore" />
+                <input type="hidden" name="oppName" value="@Model.OppName" />
+                <input type="hidden" name="oppScore" value="@Model.OppScore" />
+                <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+                <input type="hidden" name="oppImage" value="@Model.OppImage" />
+                <!--path 1 indicates user won the round-->
+                <input type="hidden" name="path" value="1" />
+                <button type="submit" class="Primary-Button">Generate Question</button>
+            }
+        </div>
+    }
+
+    <!--opponent wins round-->
+    @if (Model.WinnerOfRound == 2)
+    {
+        <div class="row-rps-instruction2">
+            <p class="instruction-text-title">You Lost... @Model.OppName Won The Round!</p>
+            <p class="instruction-text-subtext">@Model.OppName now has an opportunity to answer a question for an additional point!</p>
+            <p class="instruction-text-subtext">if you they answer incorrectly you will have a chance at answering the question for a point of your own.</p>
+            @using (Html.BeginForm("GetQuestionForRPS", "MultipleChoice", FormMethod.Post))
+            {
+                <input type="hidden" name="oppID" value="@Model.OppID" />
+                <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+                <input type="hidden" name="userName" value="@Model.UserName" />
+                <input type="hidden" name="userScore" value="@Model.UserScore" />
+                <input type="hidden" name="oppName" value="@Model.OppName" />
+                <input type="hidden" name="oppScore" value="@Model.OppScore" />
+                <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+                <input type="hidden" name="oppImage" value="@Model.OppImage" />
+                <!--path 2 indicates user won the round-->
+                <input type="hidden" name="path" value="2" />
+                <button type="submit" class="Primary-Button">Generate Question</button>
+            }
+        </div>
+
+    }
+
+    <!--round is a draw-->
+    @if (Model.WinnerOfRound == 3)
+    {
+        <div class="row-rps-instruction">
+            <p class="instruction-text-title">It's a Draw</p>
+            <p class="instruction-text-subtext">Keep playing!</p>
+            @using (Html.BeginForm("RoundOfRPS", "Play", FormMethod.Post))
+            {
+                <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+                <input type="hidden" name="oppID" value="@Model.OppID" />
+                <input type="hidden" name="userName" value="@Model.UserName" />
+                <input type="hidden" name="userScore" value="@Model.UserScore" />
+                <input type="hidden" name="oppName" value="@Model.OppName" />
+                <input type="hidden" name="oppScore" value="@Model.OppScore" />
+                <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+                <button type="submit" class="Primary-Button">Continue</button>
+            }
+        </div>
+        
+    }
+}
+
+<!--user wins game-->
+@if (Model.UserScore == Model.WinPoint)
+{
+    <div class="row-rps-winpoint">
+        <p class="winpoint-text">First To @Model.WinPoint Points Wins The Game!</p>
+    </div>
+
+    <div class="row-rps-scoreboard">
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.UserName Score: @Model.UserScore</p>
+        </div>
+        <div>
+            <img src="@Model.OppImage" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.OppName Score: @Model.OppScore</p>
+        </div>
+    </div>
+
+    <div class="row-rps-instruction2">
+        <p class="instruction-text-title">Congratulations @Model.UserName you won the game</p>
+        <p class="instruction-text-subtext">You defeated @Model.OppName.</p>
+        @using (Html.BeginForm("ChooseOpp", "Play", FormMethod.Post))
+        {
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <button type="submit" class="Primary-Button">Play Again</button>
+        }
+    </div>
+}
+
+<!--opponent wins game-->
+@if (Model.OppScore == Model.WinPoint)
+{
+    <div class="row-rps-winpoint">
+        <p class="winpoint-text">First To @Model.WinPoint Points Wins The Game!</p>
+    </div>
+
+    <div class="row-rps-scoreboard">
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.UserName Score: @Model.UserScore</p>
+        </div>
+        <div>
+            <img src="@Model.OppImage" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.OppName Score: @Model.OppScore</p>
+        </div>
+    </div>
+
+    <div class="row-rps-instruction2">
+        <p class="instruction-text-title">You Lost. @Model.OppName won the game</p>
+        <p class="instruction-text-subtext">You  were defeated. </p>
+        @using (Html.BeginForm("ChooseOpp", "Play", FormMethod.Post))
+        {
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <button type="submit" class="Primary-Button">Play Again</button>
+        }
+    </div>
+}

@@ -24,6 +24,58 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/MultipleChoice/GetQuestionForRPS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVsdGlwbGVDaG9pY2VcR2V0UXVlc3Rpb25Gb3JSUFMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/MultipleChoice/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVsdGlwbGVDaG9pY2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/MultipleChoice/InsertQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVsdGlwbGVDaG9pY2VcSW5zZXJ0UXVlc3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/MultipleChoice/SetName.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVsdGlwbGVDaG9pY2VcU2V0TmFtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/MultipleChoice/UpdateQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVsdGlwbGVDaG9pY2VcVXBkYXRlUXVlc3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/MultipleChoice/ViewQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVsdGlwbGVDaG9pY2VcVmlld1F1ZXN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/Play/ChooseOpp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheVxDaG9vc2VPcHAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/Play/RedemptionQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheVxSZWRlbXB0aW9uUXVlc3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/Play/ResultForRedemptionQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheVxSZXN1bHRGb3JSZWRlbXB0aW9uUXVlc3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/Play/ResultOfQuestionForRPS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheVxSZXN1bHRPZlF1ZXN0aW9uRm9yUlBTLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/Play/ResultOfRPS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheVxSZXN1bHRPZlJQUy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/Play/RoundOfRPS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheVxSb3VuZE9mUlBTLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/Play/SetWinPoint.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheVxTZXRXaW5Qb2ludC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Juan Lopez Salamanca/OneDrive/Desktop/Projects/RPSAcademyWebApplication/RPSAcademyWebApp/RPSAcademyWebApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
